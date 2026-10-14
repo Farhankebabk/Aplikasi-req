@@ -1,2 +1,0 @@
-# Aplikasi-req
-apk
