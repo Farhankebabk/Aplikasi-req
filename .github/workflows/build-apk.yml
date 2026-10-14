@@ -4,11 +4,14 @@ name: Build Midnight Ledger APK
 on:
   workflow_dispatch:
   push:
-    branches: [main, master]
+    branches:
+      - main
+      - master
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -26,7 +29,7 @@ jobs:
         uses: android-actions/setup-android@v3
         with:
           cmdline-tools-version: 12266719
-          packages: 'platforms;android-36,build-tools;36.0.0'
+          packages: 'platforms;android-36 build-tools;36.0.0'
           accept-android-sdk-licenses: true
 
       - name: Set up Gradle
